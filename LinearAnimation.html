@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/LinearAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Linear Search Animation</h2>
+        <input type="text" id="arrayInput" placeholder="Enter array elements separated by commas" />
+        <button onclick="generateArray()">Generate Array</button>
+        <div class="array-container" id="arrayContainer"></div>
+        <input type="text" id="targetInput" placeholder="Enter target value" />
+        <button onclick="startLinearSearch()">Start Search</button>
+
+        <div class="pseudocode">
+            <h3>Pseudocode for Linear Search:</h3>
+            <pre id="pseudocodeDisplay">
+procedure LinearSearch(array A, target)
+    for i from 0 to length of A - 1 do
+        if A[i] == target then
+            return i
+        end if
+    end for
+    return -1
+end procedure
+            </pre>
+        </div>
+    </div>
+    <script src = "Public/javascript/LinearAnimation.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/SortAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Bubble Sort Animation</h2>
+        <input type="text" id="arrayInput" placeholder="Enter array elements separated by commas" />
+        <button onclick="generateArray()">Generate Array</button>
+        <div class="array-container" id="arrayContainer"></div>
+        <button onclick="startBubbleSort()">Start Sorting</button>
+
+        <div class="pseudocode">
+            <h3>Pseudocode for Bubble Sort:</h3>
+            <pre id="pseudocodeDisplay">
+procedure BubbleSort(array A, n)
+    for i from 0 to n-1 do
+        for j from 0 to n-i-2 do
+            if A[j] > A[j+1] then
+                // Swap the elements
+                temp ← A[j]
+                A[j] ← A[j+1]
+                A[j+1] ← temp
+            end if
+        end for
+    end for
+end procedure
+            </pre>
+        </div>
+    </div>
+  <script src="Public/javascript/SortAnimation.js"></script>
+
+</body>
+</html>

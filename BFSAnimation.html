@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFS Tree Animation</title>
+    <link rel="stylesheet" href="Public/css/BFSAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>BFS on a Tree</h2>
+
+        <div class="tree-container" id="treeContainer">
+            <!-- Nodes and edges will be created dynamically here -->
+        </div>
+
+        <button onclick="startBFS()">Start BFS</button>
+
+        <div class="queue-display">
+            <strong>Queue: </strong><span id="queueDisplay">[]</span>
+        </div>
+
+        <div class="process-input">
+            <strong>Process: </strong><span id="processDisplay">Starting BFS...</span>
+        </div>
+
+        <div class="pseudocode-display">
+            <strong>Pseudocode:</strong>
+            <pre>
+FUNCTION BFS(treeRoot)
+    INITIALIZE queue as empty list
+    INITIALIZE visited as empty set
+
+    ENQUEUE treeRoot into queue
+    ADD treeRoot to visited
+
+    WHILE queue is not empty
+        DEQUEUE node from queue as currentNode
+        PRINT "Processing: currentNode"
+
+        FOR EACH child in currentNode's children
+            IF child is not in visited
+                ENQUEUE child into queue
+                ADD child to visited
+            END IF
+        END FOR
+
+        PRINT "Queue: [elements in queue]"
+    END WHILE
+
+    PRINT "BFS complete!"
+END FUNCTION
+            </pre>
+        </div>
+    </div>
+
+    <script src="Public/javascript/BFSAnimation.js"></script>
+</body>
+</html>

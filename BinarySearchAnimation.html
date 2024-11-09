@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/BinarySearchAnimation.css">
+    
+     
+</head>
+<body>
+    <div class="container">
+        <h2>Binary Search Animation</h2>
+        <input type="text" id="arrayInput" placeholder="Enter sorted array elements separated by commas" />
+        <button onclick="generateArray()">Generate Array</button>
+        <div class="array-container" id="arrayContainer"></div>
+        <input type="text" id="targetInput" placeholder="Enter target value" />
+        <button onclick="startBinarySearch()">Start Search</button>
+
+        <div class="pseudocode">
+            <h3>Pseudocode for Binary Search:</h3>
+            <pre id="pseudocodeDisplay">
+procedure BinarySearch(array A, target)
+    low = 0
+    high = length of A - 1
+    while low <= high do
+        mid = (low + high) / 2
+        if A[mid] == target then
+            return mid
+        else if A[mid] < target then
+            low = mid + 1
+        else
+            high = mid - 1
+    end while
+    return -1
+end procedure
+            </pre>
+        </div>
+    </div>
+      <script src = "Public/javascript/BinarySearchAnimation.js"></script>
+    
+</body>
+</html>
