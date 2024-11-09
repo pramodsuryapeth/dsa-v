@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Visualizer</title>
-    <link rel="stylesheet" href="Public\css\style.css">
+    <link rel="stylesheet" href="Public/css/style.css">
 </head>
 <body>
     <header>
@@ -13,38 +13,75 @@
     </header>
     
     <main class="grid-container">
-        <div class="card">
-            <!-- <a href="SortAnimation.html"> -->
-            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.38 PM.jpeg" alt="Bubble Sort">
+        <div class="card" data-url="BubbleSortAnimation.html">
+            <img src="Image/WhatsApp Image 2024-11-08 at 6.07.38 PM.jpeg" alt="Bubble Sort">
             <h3>Bubble Sort</h3>
-          
         </div>
-        <div class="card">
-            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.39 PM.jpeg" alt="Linear Search">
+        <div class="card" data-url="LinearAnimation.html">
+            <img src="Image/WhatsApp Image 2024-11-08 at 6.07.39 PM.jpeg" alt="Linear Search">
             <h3>Linear Search</h3>
-            
         </div>
-        <div class="card">
-            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.40 PM.jpeg" alt="Linear Search">
+        <div class="card" data-url="BinarySearchAnimation.html">
+            <img src="Image/WhatsApp Image 2024-11-08 at 6.07.40 PM.jpeg" alt="Binary Search">
             <h3>Binary Search</h3>
-            
         </div>
-        <div class="card">
-            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.39 PM (1).jpeg" alt="Linear Search">
-            <h3>Breadth Frist Search</h3>
-            
+        <div class="card" data-url="BFSAnimation.html">
+            <img src="Image/WhatsApp Image 2024-11-08 at 6.07.39 PM (1).jpeg" alt="Breadth First Search Animation">
+            <h3>Breadth First Search Animation</h3>
         </div>
-        <div class="card">
-            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.40 PM (1).jpeg" alt="Linear Search">
+        <div class="card" data-url="KnapsackProblemAnimation.html">
+            <img src="Image/WhatsApp Image 2024-11-08 at 6.07.40 PM (1).jpeg" alt="Knapsack Problem">
             <h3>Knapsack Problem</h3>
-            
         </div>
-        <div class="card">
-            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.41 PM.jpeg" alt="Linear Search">
-            <h3>Merge Sort</h3>
-            
+        <div class="card" data-url="MergeSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.41 PM.jpeg" alt="Merge Sort Algorithm">
+            <h3>Merge Sort Algorithm</h3>
+        </div>
+        <div class="card" data-url="SelectionSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.08 PM (1).jpeg" alt="Selection Sort Animation">
+            <h3>Selection Sort Animation</h3>
+        </div>
+        <div class="card" data-url="InsertionSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.08 PM.jpeg" alt="Insertion Sort Animation">
+            <h3>Insertion Sort Animation</h3>
+        </div>
+        <div class="card" data-url="QuickSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.07 PM (1).jpeg" alt="Quick Sort Animation">
+            <h3>Quick Sort Animation</h3>
+        </div>
+        <div class="card" data-url="HeapSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-08 at 6.07.41 PM.jpeg" alt="Heap Sort Animation">
+            <h3>Heap Sort Animation</h3>
+        </div>
+        <div class="card" data-url="RadixSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.06 PM (1).jpeg" alt=" Radix Sort Animation">
+            <h3>Radix Sort Animation</h3>
+        </div>
+        <div class="card" data-url="CountingSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.06 PM.jpeg" alt="Counting Sort Animation">
+            <h3>Counting Sort Animation</h3>
+        </div>
+        <div class="card" data-url="ShellSortAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.05 PM (1).jpeg" alt="Shell Sort Animation">
+            <h3>Shell Sort Animation</h3>
+        </div>
+        <div class="card" data-url="DFSAnimation.html">
+            <img src="Image\WhatsApp Image 2024-11-09 at 8.16.05 PM.jpeg" alt="Depth-First Search (DFS) Animation">
+            <h3>Depth-First Search (DFS) Animation</h3>
         </div>
     </main>
-    <script src = "Public/javascript/index.js"></script>
+
+    <script src="Public/javascript/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".card");
+            cards.forEach(card => {
+                card.addEventListener("click", function () {
+                    const url = card.getAttribute("data-url");
+                    window.location.href = url;
+                });
+            });
+        });
+    </script>
 </body>
 </html>

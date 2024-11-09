@@ -1,5 +1,5 @@
 let array = [];
-let delay = 3000;
+let delay = 1000;
 
 function generateArray() {
     const input = document.getElementById('arrayInput').value;
@@ -22,59 +22,48 @@ function createBars(array) {
 async function bubbleSort(array) {
     const bars = document.getElementsByClassName('bar');
     const pseudoDisplay = document.getElementById('pseudocodeDisplay');
-    for (let i = 0; i < array.length - 1; i++) {
-        for (let j = 0; j < array.length - i - 1; j++) {
-            bars[j].style.backgroundColor = '#f5b041';
-            bars[j + 1].style.backgroundColor = '#f5b041';
+    await bubbleSortHelper(array, bars, pseudoDisplay);
+}
+
+async function bubbleSortHelper(array, bars, pseudoDisplay) {
+    let n = array.length;
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            bars[j].style.backgroundColor = '#f5b041'; // Change color to show comparison
+            bars[j + 1].style.backgroundColor = '#f5b041'; // Change color to show comparison
 
             updatePseudocode(i, j);
 
             if (array[j] > array[j + 1]) {
-                await swapBars(bars[j], bars[j + 1]);
-                let temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
+                // Swap the elements
+                [array[j], array[j + 1]] = [array[j + 1], array[j]];
+                bars[j].style.height = `${array[j] * 3}px`;
+                bars[j].textContent = array[j];
+                bars[j + 1].style.height = `${array[j + 1] * 3}px`;
+                bars[j + 1].textContent = array[j + 1];
             }
-
-            bars[j].style.backgroundColor = '#ff6f61';
-            bars[j + 1].style.backgroundColor = '#ff6f61';
+            await sleep(delay);
+            bars[j].style.backgroundColor = '#ff6f61'; // Reset color after comparison
+            bars[j + 1].style.backgroundColor = '#ff6f61'; // Reset color after comparison
         }
-        bars[array.length - i - 1].classList.add('sorted');
     }
-    bars[0].classList.add('sorted');
 }
 
-function swapBars(bar1, bar2) {
-    return new Promise((resolve) => {
-        const tempHeight = bar1.style.height;
-        const tempText = bar1.textContent;
-
-        bar1.style.height = bar2.style.height;
-        bar1.textContent = bar2.textContent;
-
-        bar2.style.height = tempHeight;
-        bar2.textContent = tempText;
-
-        setTimeout(() => {
-            resolve();
-        }, delay);
-    });
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function updatePseudocode(i, j) {
     const pseudoDisplay = document.getElementById('pseudocodeDisplay');
     pseudoDisplay.innerHTML = `
-procedure BubbleSort(array A, n)
-for i from 0 to n-1 do
-for j from 0 to n-i-2 do
-    if A[j] > A[j+1] then
-        // Swap the elements (i = ${i}, j = ${j})
-        temp ← A[j]
-        A[j] ← A[j+1]
-        A[j+1] ← temp
-    end if
-end for
-end for
+procedure BubbleSort(array A)
+    for i ← 0 to length(A) - 1 do
+        for j ← 0 to length(A) - i - 2 do
+            if A[j] > A[j + 1] then
+                swap A[j] and A[j + 1]
+            end if
+        end for
+    end for
 end procedure
     `;
 }

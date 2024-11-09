@@ -1,0 +1,144 @@
+/* Basic styling for the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #2980b9);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.controls {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-right: 50px;
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e74c3c;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 2px solid #ff6347;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pseudocode {
+    margin-top: 40px;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.pseudocode pre {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 50%;
+}
+
+.bar {
+    width: 20px;
+    margin: 0 3px;
+    background-color: #f39c12;
+    text-align: center;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: auto;
+}
+
+.sorted {
+    background-color: #2ecc71 !important;
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .bar {
+        width: 15px;
+        margin: 0 2px;
+        font-size: 0.7rem;
+    }
+
+    .pseudocode pre {
+        font-size: 0.9rem;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .array-container {
+        width: 100%;
+    }
+
+    .pseudocode {
+        margin-top: 20px;
+    }
+}

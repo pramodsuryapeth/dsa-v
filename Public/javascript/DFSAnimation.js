@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
     };
 
-    
+    // Function to create nodes
     function createNode(value, x, y) {
         const node = document.createElement("div");
         node.classList.add("node");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return node;
     }
 
-   
+    // Function to create edges
     function createEdge(x1, y1, x2, y2) {
         const edge = document.createElement("div");
         edge.classList.add("edge");
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return edge;
     }
 
-    
+    // Function to generate the tree structure
     function generateTree(node, x, y, offsetX) {
         const createdNode = createNode(node.value, x, y);
         
@@ -66,27 +66,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-     
     generateTree(treeData, 300, 20, 120);
 
-   
-    async function startBFS() {
-        const queueDisplay = document.getElementById("queueDisplay");
+    async function startDFS() {
+        const stackDisplay = document.getElementById("stackDisplay");
         const processDisplay = document.getElementById("processDisplay");
 
-        const queue = [];
-        queue.push(treeData);
+        const stack = [];
+        stack.push(treeData);
 
-        queueDisplay.textContent = JSON.stringify(queue.map(node => node.value));
-        processDisplay.textContent = "Starting BFS...";
+        stackDisplay.textContent = JSON.stringify(stack.map(node => node.value));
+        processDisplay.textContent = "Starting DFS...";
 
         const edges = Array.from(document.getElementsByClassName("edge"));
         edges.forEach(edge => edge.classList.add("edge-hidden"));  
 
-        while (queue.length > 0) {
-            const currentNode = queue.shift();
+        while (stack.length > 0) {
+            const currentNode = stack.pop();
 
-             
+            // Highlight the current node
             const nodeElements = Array.from(document.getElementsByClassName("node"));
             const currentNodeElement = nodeElements.find(node => node.textContent == currentNode.value);
             currentNodeElement.style.backgroundColor = "orange";
@@ -95,11 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             processDisplay.textContent = `Processing node ${currentNode.value}`;
 
-           
+            // Push children onto the stack
             currentNode.children.forEach(child => {
-                queue.push(child);
+                stack.push(child);
 
-              
                 const edgeElements = Array.from(document.getElementsByClassName("edge"));
                 const edgeToChild = edgeElements.find(edge => {
                     const x1 = parseFloat(edge.style.left);
@@ -115,19 +112,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
                 });
 
-               
+                // Show edge to child
                 if (edgeToChild) {
                     edgeToChild.classList.remove("edge-hidden");
                     edgeToChild.classList.add("edge-visible");
                 }
             });
 
-            queueDisplay.textContent = JSON.stringify(queue.map(node => node.value));
+            stackDisplay.textContent = JSON.stringify(stack.map(node => node.value));
             await new Promise(resolve => setTimeout(resolve, 1000)); 
         }
 
-        processDisplay.textContent = "BFS complete!";
+        processDisplay.textContent = "DFS complete!";
     }
 
-    window.startBFS = startBFS;  
+    window.startDFS = startDFS;
 });

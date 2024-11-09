@@ -44,19 +44,17 @@ button:hover {
     background-color: #45a049;
 }
 
- 
 .tree-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    min-height: 300px; 
-    margin-bottom: 30px; 
-    padding-bottom: 20px; 
-    overflow-x: auto;  
+    min-height: 300px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    overflow-x: auto;
 }
-
 
 .node {
     width: 40px;
@@ -99,12 +97,11 @@ button:hover {
     padding: 15px;
 }
 
- 
 @media (max-width: 768px) {
     .container {
         padding: 15px;
     }
-    
+
     button {
         font-size: 14px;
         padding: 8px 15px;

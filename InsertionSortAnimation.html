@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/InsertionSortAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Insertion Sort Animation</h2>
+        <input type="text" id="arrayInput" placeholder="Enter array elements separated by commas" />
+        <button onclick="generateArray()">Generate Array</button>
+        <div class="array-container" id="arrayContainer">
+           
+        </div>
+        <input type="text" id="targetInput" placeholder="Enter target value" />
+        <button onclick="startInsertionSort()">Start Sort</button>
+
+        <div class="pseudocode">
+            <h3>Pseudocode for Insertion Sort:</h3>
+            <pre id="pseudocodeDisplay">
+procedure InsertionSort(array A)
+    for i ← 1 to length(A) - 1 do
+        key = A[i]
+        j = i - 1
+        while j ≥ 0 and A[j] > key do
+            A[j + 1] = A[j]
+            j = j - 1
+        end while
+        A[j + 1] = key
+    end for
+end procedure
+            </pre>
+        </div>
+    </div>
+    
+    <script src="Public/javascript/InsertionSortAnimation.js"></script>
+</body>
+</html>

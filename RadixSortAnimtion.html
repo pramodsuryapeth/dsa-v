@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radix Sort Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/RadixSortAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h2>Radix Sort Animation</h2>
+            <input type="text" id="arrayInput" placeholder="Enter array elements separated by commas" />
+            <button onclick="generateArray()">Generate Array</button>
+            <button onclick="startRadixSort()">Start Sort</button>
+        </div>
+        <div class="content">
+            <div class="pseudocode">
+                <h3>Pseudocode for Radix Sort:</h3>
+                <pre id="pseudocodeDisplay">
+procedure RadixSort(array A)
+    max = Find maximum number in A
+    for exp ← 1 to max(A) do
+        Perform Counting Sort on A based on the current digit (exp)
+    end for
+end procedure
+
+procedure CountingSort(array A, exp)
+    Initialize count array
+    Store count of occurrences of each digit in A
+    Update count array to reflect actual position of digits
+    Build output array based on count
+    Copy output array back into original array A
+end procedure
+                </pre>
+            </div>
+            <div class="array-container" id="arrayContainer">
+                <!-- Bars will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="Public/javascript/RadixSortAnimation.js"></script>
+</body>
+</html>

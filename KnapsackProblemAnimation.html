@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0/1 Knapsack Problem Visualizer</title>
+    <link rel="stylesheet" href="Public/css/knapsack.css">
+</head>
+<body>
+    <header>
+        <h1>0/1 Knapsack Problem Visualizer</h1>
+    </header>
+
+    <!-- Input fields for weights, values, and capacity -->
+    <div id="input-container">
+        <h2>Enter Knapsack Data</h2>
+        <label for="weights">Weights (comma-separated): </label>
+        <input type="text" id="weights" placeholder="e.g., 1, 2, 3"><br><br>
+
+        <label for="values">Values (comma-separated): </label>
+        <input type="text" id="values" placeholder="e.g., 6, 10, 12"><br><br>
+
+        <label for="capacity">Knapsack Capacity: </label>
+        <input type="number" id="capacity" placeholder="e.g., 5"><br><br>
+
+        <button onclick="initializeAndStart()">Start Visualization</button>
+    </div>
+
+    <main>
+        <!-- Display the DP Table -->
+        <div id="dp-table-container">
+            <h2>DP Table</h2>
+            <table id="dp-table"></table>
+        </div>
+
+        <!-- Display the Pseudocode -->
+        <div id="pseudocode-container">
+            <h2>Pseudocode</h2>
+            <pre id="pseudocode">
+                dp[i][w] = 0  for i = 0 or w = 0
+                For each item i from 1 to n:
+                    For each weight w from 1 to W:
+                        If weight[i] <= w:
+                            dp[i][w] = max(dp[i-1][w], dp[i-1][w - weight[i]] + value[i])
+                        Else:
+                            dp[i][w] = dp[i-1][w]
+            </pre>
+        </div>
+    </main>
+
+    <!-- Controls for Animation -->
+    <div id="controls">
+        <button onclick="pauseAnimation()">Pause</button>
+        <button onclick="resetAnimation()">Reset</button>
+    </div>
+
+    <script src="Public/javascript/knapsack.js"></script>
+</body>
+</html>

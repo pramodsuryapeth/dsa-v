@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heap Sort Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/HeapSortAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h2>Heap Sort Animation</h2>
+            <input type="text" id="arrayInput" placeholder="Enter array elements separated by commas" />
+            <button onclick="generateArray()">Generate Array</button>
+            <button onclick="startHeapSort()">Start Sort</button>
+        </div>
+        <div class="content">
+            <div class="pseudocode">
+                <h3>Pseudocode for Heap Sort:</h3>
+                <pre id="pseudocodeDisplay">
+procedure HeapSort(array A)
+    for i ← length(A) / 2 - 1 to 0 do
+        Heapify the tree
+    end for
+    for i ← length(A) - 1 to 1 do
+        Swap A[0] and A[i]
+        Heapify with reduced heap
+    end for
+end procedure
+
+procedure heapify(array A, n, i)
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
+    if left < n and A[left] > A[largest] then
+        largest = left
+    end if
+    if right < n and A[right] > A[largest] then
+        largest = right
+    end if
+    if largest ≠ i then
+        Swap A[i] and A[largest]
+        heapify(array A, n, largest)
+    end if
+end procedure
+                </pre>
+            </div>
+            <div class="array-container" id="arrayContainer">
+                <!-- Bars will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="Public/javascript/HeapSortAnimation.js"></script>
+</body>
+</html>

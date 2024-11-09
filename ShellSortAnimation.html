@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Sort Visualizer</title>
+    <link rel="stylesheet" href="Public/css/shellsort.css">
+</head>
+<body>
+
+    <div class="header">Shell Sort Visualizer</div>
+    
+    <div class="controls">
+        <input type="number" id="arraySize" placeholder="Array Size" min="5" max="30" value="10">
+        <button id="generateArrayBtn">Generate Array</button>
+        <button id="startSortBtn">Start Sorting</button>
+    </div>
+
+    <div class="container">
+        <div class="array-container" id="arrayContainer"></div>
+        <div class="pseudocode-display" id="pseudocodeContainer">
+            <h3>Shell Sort Pseudocode</h3>
+            <pre id="pseudocode">
+1. Start with a large gap and reduce it until the gap is 1.
+2. For each gap, perform an insertion sort on the sublist.
+3. Compare elements with the gap distance, if needed, swap them.
+4. Continue the process until the array is sorted.
+            </pre>
+        </div>
+    </div>
+
+    <script src="Public/javascript/shellSort.js"></script>
+</body>
+</html>

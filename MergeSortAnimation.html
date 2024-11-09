@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort Visualization</title>
+    <link rel="stylesheet" href="Public\css\mergesort.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Merge Sort Visualization</h2>
+        <div class="controls">
+            <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas (e.g., 3,1,2,5)">
+            <button onclick="generateArray()">Generate Array</button>
+            <button onclick="startMergeSort()">Start Merge Sort</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div id="arrayContainer" class="array-container"></div>
+        <div id="pseudocodeDisplay" class="pseudocode-display">
+            <h3>Pseudocode</h3>
+            <pre>
+function mergeSort(array)
+    if array has 1 element
+        return array
+    split array into two halves
+    left = mergeSort(left half)
+    right = mergeSort(right half)
+    return merge(left, right)
+
+function merge(left, right)
+    while left and right have elements
+        if left[0] < right[0]
+            push left[0] to result and remove from left
+        else
+            push right[0] to result and remove from right
+    push remaining elements of left and right to result
+    return result
+            </pre>
+        </div>
+    </div>
+
+    <script src="Public/javascript/mergesort.js"></script>
+</body>
+</html>

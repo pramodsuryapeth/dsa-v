@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #3498db, #2ecc71); /* New gradient background */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.bar {
+    width: 20px;
+    margin: 0 3px;
+    background-color: #f39c12;
+    text-align: center;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: auto;
+}
+
+.sorted {
+    background-color: #2ecc71 !important;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e74c3c;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 2px solid #ff6347;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.pseudocode {
+    margin-top: 40px;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.pseudocode pre {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .bar {
+        width: 15px;
+        margin: 0 2px;
+        font-size: 0.7rem;
+    }
+
+    .pseudocode pre {
+        font-size: 0.9rem;
+    }
+}

@@ -1,33 +1,32 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e3f2fd;
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
-/* Header Styling */
 header {
-    background-color: #00796b;
+    background-color: #0288d1; /* Bright blue for header */
     width: 100%;
     padding: 20px;
     color: #fff;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
 }
 
 header h1 {
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 2.8em;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -35,47 +34,53 @@ header h1 {
     padding: 10px 15px;
     width: 80%;
     max-width: 400px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
+    font-size: 1.1em;
+    border: 2px solid #0288d1;
+    border-radius: 30px;
     outline: none;
     margin-top: 15px;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    background-color: #ffffff;
 }
 
 #searchbar:focus {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #0277bd; /* Darker blue when focused */
 }
 
-/* Main Grid Container */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px;
     width: 90%;
     max-width: 1200px;
-    margin-top: 30px;
+    margin-top: 40px;
+    justify-items: center;
 }
 
-/* Card Styles */
 .card {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     text-align: center;
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f1f8e9; /* Light green on hover */
 }
 
 .card img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -91,6 +96,7 @@ header h1 {
     color: #333;
     margin-top: 10px;
     margin-bottom: 5px;
+    font-weight: 500;
 }
 
 .card a {
@@ -98,10 +104,9 @@ header h1 {
     color: inherit;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.4em;
     }
     
     #searchbar {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort Animation with Pseudocode</title>
+    <link rel="stylesheet" href="Public/css/QuickSortAnimation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Quick Sort Animation</h2>
+        <input type="text" id="arrayInput" placeholder="Enter array elements separated by commas" />
+        <button onclick="generateArray()">Generate Array</button>
+        <div class="array-container" id="arrayContainer"></div>
+        <input type="text" id="targetInput" placeholder="Choose Pivot Value" />
+        <button onclick="startQuickSort()">Start Sort</button>
+
+        <div class="pseudocode">
+            <h3>Pseudocode for Quick Sort:</h3>
+            <pre id="pseudocodeDisplay">
+procedure QuickSort(array A, low, high)
+    if low < high then
+        pivotIndex = Partition(A, low, high)
+        QuickSort(A, low, pivotIndex - 1)
+        QuickSort(A, pivotIndex + 1, high)
+    end if
+end procedure
+
+procedure Partition(array A, low, high)
+    pivot = A[high]
+    i = low - 1
+    for j = low to high - 1 do
+        if A[j] < pivot then
+            i = i + 1
+            swap A[i] with A[j]
+        end if
+    end for
+    swap A[i + 1] with A[high]
+    return i + 1
+end procedure
+            </pre>
+        </div>
+    </div>
+    
+    <script src="Public/javascript/QuickSortAnimation.js"></script>
+</body>
+</html>
