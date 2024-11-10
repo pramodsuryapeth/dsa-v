@@ -27,22 +27,21 @@ async function startHeapSort() {
 
 async function heapSort(array, bars, pseudoDisplay) {
     let n = array.length;
-
-    // Build heap (rearrange array)
+ 
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
         await heapify(array, bars, n, i, pseudoDisplay, "Building Heap");
     }
 
-    // One by one extract elements
+  
     for (let i = n - 1; i > 0; i--) {
-        // Move current root to end
+ 
         [array[0], array[i]] = [array[i], array[0]];
         bars[0].style.height = `${array[0] * 3}px`;
         bars[0].textContent = array[0];
         bars[i].style.height = `${array[i] * 3}px`;
         bars[i].textContent = array[i];
-        bars[0].style.backgroundColor = '#2ecc71'; // Green for swapped
-        bars[i].style.backgroundColor = '#f39c12'; // Orange for swapped
+        bars[0].style.backgroundColor = '#2ecc71';  
+        bars[i].style.backgroundColor = '#f39c12'; 
         await sleep(delay);
 
         await heapify(array, bars, i, 0, pseudoDisplay, "Heapify after swap");
@@ -54,9 +53,9 @@ async function heapify(array, bars, n, i, pseudoDisplay, action) {
     let left = 2 * i + 1;
     let right = 2 * i + 2;
 
-    // Update pseudocode to reflect heapifying
+  
     updatePseudocode(i, left, right, action, "Heapify");
-    bars[i].style.backgroundColor = '#ff5733';  // Red for current element
+    bars[i].style.backgroundColor = '#ff5733';  
     
     if (left < n && array[left] > array[largest]) {
         largest = left;
@@ -66,7 +65,7 @@ async function heapify(array, bars, n, i, pseudoDisplay, action) {
     }
 
     if (largest !== i) {
-        // Swap elements
+        
         [array[i], array[largest]] = [array[largest], array[i]];
         bars[i].style.height = `${array[i] * 3}px`;
         bars[i].textContent = array[i];

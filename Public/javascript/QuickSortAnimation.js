@@ -37,15 +37,15 @@ async function partition(array, low, high, bars, pseudoDisplay) {
     const pivot = array[high];
     let i = low - 1;
 
-    updatePseudocode("Partitioning", low, high, pivot); // Display partitioning
+    updatePseudocode("Partitioning", low, high, pivot);  
 
     for (let j = low; j <= high - 1; j++) {
-        bars[j].style.backgroundColor = '#ff5733';  // Mark bar being compared
+        bars[j].style.backgroundColor = '#ff5733';  
         updatePseudocode("Comparing element with pivot", low, high, pivot);
 
         if (array[j] < pivot) {
             i++;
-            [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            [array[i], array[j]] = [array[j], array[i]];  
             bars[i].style.height = `${array[i] * 3}px`;
             bars[i].textContent = array[i];
             bars[j].style.height = `${array[j] * 3}px`;
@@ -55,7 +55,7 @@ async function partition(array, low, high, bars, pseudoDisplay) {
         await sleep(delay);
     }
 
-    [array[i + 1], array[high]] = [array[high], array[i + 1]]; // Swap pivot with element at i + 1
+    [array[i + 1], array[high]] = [array[high], array[i + 1]]; 
     bars[i + 1].style.height = `${array[i + 1] * 3}px`;
     bars[i + 1].textContent = array[i + 1];
     bars[high].style.height = `${array[high] * 3}px`;

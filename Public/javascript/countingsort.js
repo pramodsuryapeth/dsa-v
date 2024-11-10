@@ -31,21 +31,21 @@ async function countingSort(array, bars) {
     const max = Math.max(...array);
     const count = new Array(max + 1).fill(0);
 
-    updatePseudocode(1); // Step 1
+    updatePseudocode(1);  
     await sleep(delay);
 
-    // Counting occurrences of each number
+     
     for (let num of array) {
         count[num]++;
     }
 
-    updatePseudocode(2); // Step 2
+    updatePseudocode(2);  
     await sleep(delay);
 
     let index = 0;
     for (let i = 0; i <= max; i++) {
         while (count[i] > 0) {
-            updatePseudocode(3); // Step 3
+            updatePseudocode(3);  
             bars[index].style.backgroundColor = '#f39c12';
             array[index] = i;
             bars[index].style.height = `${i * 5}px`;
@@ -53,11 +53,11 @@ async function countingSort(array, bars) {
             count[i]--;
             index++;
             await sleep(delay);
-            bars[index - 1].style.backgroundColor = '#2ecc71'; // Mark as sorted
+            bars[index - 1].style.backgroundColor = '#2ecc71';  
         }
     }
 
-    updatePseudocode(4); // Step 4 (end)
+    updatePseudocode(4);  
 }
 
 function sleep(ms) {

@@ -1,4 +1,4 @@
-/* Basic styling for the page */
+ 
 body {
     display: flex;
     justify-content: center;
@@ -111,15 +111,15 @@ input[type="text"] {
 }
 
 .bar.processing {
-    background-color: #e74c3c !important; /* Red for processing */
+    background-color: #e74c3c !important;  
 }
 
 .bar.sorted {
-    background-color: #2ecc71 !important; /* Green for sorted */
+    background-color: #2ecc71 !important; 
 }
 
 .bar.currentDigit {
-    background-color: #3498db !important; /* Blue for current digit being sorted */
+    background-color: #3498db !important;  
 }
 
 @media screen and (max-width: 768px) {

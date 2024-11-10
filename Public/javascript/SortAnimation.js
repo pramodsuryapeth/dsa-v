@@ -29,13 +29,13 @@ async function bubbleSortHelper(array, bars, pseudoDisplay) {
     let n = array.length;
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - i - 1; j++) {
-            bars[j].style.backgroundColor = '#f5b041'; // Change color to show comparison
-            bars[j + 1].style.backgroundColor = '#f5b041'; // Change color to show comparison
+            bars[j].style.backgroundColor = '#f5b041';  
+            bars[j + 1].style.backgroundColor = '#f5b041'; 
 
             updatePseudocode(i, j);
 
             if (array[j] > array[j + 1]) {
-                // Swap the elements
+                 
                 [array[j], array[j + 1]] = [array[j + 1], array[j]];
                 bars[j].style.height = `${array[j] * 3}px`;
                 bars[j].textContent = array[j];
@@ -43,8 +43,8 @@ async function bubbleSortHelper(array, bars, pseudoDisplay) {
                 bars[j + 1].textContent = array[j + 1];
             }
             await sleep(delay);
-            bars[j].style.backgroundColor = '#ff6f61'; // Reset color after comparison
-            bars[j + 1].style.backgroundColor = '#ff6f61'; // Reset color after comparison
+            bars[j].style.backgroundColor = '#ff6f61';  
+            bars[j + 1].style.backgroundColor = '#ff6f61'; 
         }
     }
 }

@@ -5,10 +5,10 @@ let currentStep = 0;
 let animationInterval;
 const pseudocode = document.getElementById("pseudocode").innerText;
 
-// Initialize DP Table
+ 
 function initializeDPTable() {
     const dpTable = document.getElementById("dp-table");
-    dpTable.innerHTML = ""; // Clear table
+    dpTable.innerHTML = ""; 
 
     for (let i = 0; i <= items.length; i++) {
         dp[i] = Array(capacity + 1).fill(0);
@@ -23,8 +23,7 @@ function initializeDPTable() {
         dpTable.appendChild(row);
     }
 }
-
-// Update DP Table Cell
+ 
 function updateDPTable(i, w, value) {
     dp[i][w] = value;
     const cell = document.getElementById(`cell-${i}-${w}`);
@@ -36,7 +35,7 @@ function updateDPTable(i, w, value) {
     }, 500);
 }
 
-// Step-by-Step Animation Logic
+ 
 function animateKnapsack() {
     let i = Math.floor(currentStep / (capacity + 1));
     let w = currentStep % (capacity + 1);
@@ -64,7 +63,7 @@ function animateKnapsack() {
     currentStep++;
 }
 
-// Pseudocode Highlighting
+ 
 function updatePseudocode(i, w) {
     let code = pseudocode.split("\n");
     const weight = i > 0 ? items[i - 1].weight : 0;
@@ -81,14 +80,14 @@ function updatePseudocode(i, w) {
     document.getElementById("pseudocode").innerText = code.join("\n");
 }
 
-// Start the animation after collecting user input
+ 
 function initializeAndStart() {
-    // Retrieve values from input fields
+   
     const weightsInput = document.getElementById("weights").value;
     const valuesInput = document.getElementById("values").value;
     capacity = parseInt(document.getElementById("capacity").value);
 
-    // Convert the weights and values from strings to arrays of numbers
+     
     const weights = weightsInput.split(',').map(Number);
     const values = valuesInput.split(',').map(Number);
 
@@ -97,16 +96,16 @@ function initializeAndStart() {
         return;
     }
 
-    // Initialize items array
+ 
     items = weights.map((weight, index) => ({ weight, value: values[index] }));
     
-    // Initialize DP table and start animation
+     
     initializeDPTable();
     currentStep = 0;
-    animationInterval = setInterval(animateKnapsack, 1000); // Animate every 1 second
+    animationInterval = setInterval(animateKnapsack, 1000);  
 }
 
-// Control Functions
+ 
 function pauseAnimation() {
     clearInterval(animationInterval);
 }

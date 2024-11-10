@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #3498db, #2ecc71); /* New gradient background */
+    background: linear-gradient(135deg, #3498db, #2ecc71);  
     padding: 10px;
     box-sizing: border-box;
 }

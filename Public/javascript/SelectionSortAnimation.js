@@ -29,12 +29,12 @@ async function selectionSort(array, bars, pseudoDisplay) {
     let n = array.length;
     for (let i = 0; i < n - 1; i++) {
         let minIndex = i;
-        bars[i].style.backgroundColor = '#f5b041'; // Highlight the current position
+        bars[i].style.backgroundColor = '#f5b041';  
 
         updatePseudocode(i, minIndex, "Highlighting current element");
 
         for (let j = i + 1; j < n; j++) {
-            bars[j].style.backgroundColor = '#f5b041'; // Highlight the comparison element
+            bars[j].style.backgroundColor = '#f5b041'; 
             updatePseudocode(i, j, "Comparing elements");
 
             if (array[j] < array[minIndex]) {
@@ -43,10 +43,9 @@ async function selectionSort(array, bars, pseudoDisplay) {
             }
             await sleep(delay);
 
-            bars[j].style.backgroundColor = '#ff6f61'; // Reset color after comparison
+            bars[j].style.backgroundColor = '#ff6f61';  
         }
-
-        // Swap elements if necessary
+ 
         if (minIndex !== i) {
             [array[i], array[minIndex]] = [array[minIndex], array[i]];
             bars[i].style.height = `${array[i] * 3}px`;
@@ -57,7 +56,7 @@ async function selectionSort(array, bars, pseudoDisplay) {
             updatePseudocode(i, minIndex, "Swapping elements");
         }
 
-        bars[i].style.backgroundColor = '#4caf50'; // Mark as sorted
+        bars[i].style.backgroundColor = '#4caf50'; 
         updatePseudocode(i, minIndex, "Element sorted");
         await sleep(delay);
     }

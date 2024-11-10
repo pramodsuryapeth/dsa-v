@@ -1,11 +1,11 @@
-/* General styling */
+ 
 body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    background-color: #f0f8ff; /* Light blue background for the entire page */
+    background-color: #f0f8ff; 
     color: #333;
 }
 
@@ -63,7 +63,7 @@ button:active {
     background-color: #36648b;
 }
 
-/* Styling for items and knapsack elements */
+ 
 .container {
     display: flex;
     flex-direction: column;
@@ -82,28 +82,28 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #87cefa; /* Sky blue */
-    border: 2px solid #4682b4; /* Darker blue */
+    background-color: #87cefa; 
+    border: 2px solid #4682b4;  
     border-radius: 8px;
     font-weight: bold;
     color: #333;
     transition: background-color 0.3s;
 }
 
-/* Highlight for selected, included, and active items */
+ 
 .selected {
-    background-color: #ffa07a; /* Light salmon for selected items */
+    background-color: #ffa07a; 
 }
 
 .included {
-    background-color: #32cd32; /* Lime green for included items */
+    background-color: #32cd32; 
 }
 
 .active-cell {
-    background-color: #f7dc6f; /* Highlight cell being processed in the DP table */
+    background-color: #f7dc6f; 
 }
 
-/* DP Table styling */
+ 
 #dp-table-container {
     display: inline-block;
     background-color: #f8f9fa;
@@ -138,13 +138,11 @@ button:active {
     color: #4682b4;
     font-size: 1.1em;
     text-align: left;
-    width: 800px;  /* Set the fixed width */
-    height: 220px; /* Set the fixed height */
-    overflow: auto; /* Optional: adds scrollbars if content exceeds container size */
+    width: 800px;   
+    height: 220px; 
+    overflow: auto;  
 }
-
-
-/* Controls for Animation */
+ 
 #controls {
     margin-top: 10px;
 }

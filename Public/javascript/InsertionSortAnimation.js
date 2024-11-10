@@ -31,13 +31,12 @@ async function insertionSort(array, bars, pseudoDisplay) {
         let key = array[i];
         let j = i - 1;
 
-        bars[i].style.backgroundColor = '#f39c12'; // Highlight the current element
+        bars[i].style.backgroundColor = '#f39c12';  
 
         updatePseudocode(i, j, "Inserting element");
-
-        // Move elements of array[0..i-1] that are greater than key, to one position ahead
+ 
         while (j >= 0 && array[j] > key) {
-            bars[j].style.backgroundColor = '#ff5733'; // Highlight elements being shifted
+            bars[j].style.backgroundColor = '#ff5733';  
             array[j + 1] = array[j];
             bars[j + 1].style.height = `${array[j + 1] * 3}px`;
             bars[j + 1].textContent = array[j + 1];
@@ -49,7 +48,7 @@ async function insertionSort(array, bars, pseudoDisplay) {
         bars[j + 1].style.height = `${array[j + 1] * 3}px`;
         bars[j + 1].textContent = array[j + 1];
 
-        bars[i].style.backgroundColor = '#2ecc71'; // Mark as sorted
+        bars[i].style.backgroundColor = '#2ecc71';  
         updatePseudocode(i, j, "Element inserted at correct position");
         await sleep(delay);
     }

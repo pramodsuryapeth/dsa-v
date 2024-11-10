@@ -40,38 +40,36 @@ async function countingSort(array, bars, pseudoDisplay, exp) {
     const output = new Array(n);
     const count = new Array(10).fill(0);
 
-    // Store count of occurrences
+  
     for (let i = 0; i < n; i++) {
         let index = Math.floor(array[i] / exp) % 10;
         count[index]++;
     }
-
-    // Change count[i] to contain the actual position of this digit in output[]
+ 
     for (let i = 1; i < 10; i++) {
         count[i] += count[i - 1];
     }
 
-    // Build the output array
+  
     for (let i = n - 1; i >= 0; i--) {
         let index = Math.floor(array[i] / exp) % 10;
         output[count[index] - 1] = array[i];
         count[index]--;
     }
 
-    // Copy the output array to array[], so that array[] contains sorted numbers
+    
     for (let i = 0; i < n; i++) {
         array[i] = output[i];
         bars[i].style.height = `${array[i] * 3}px`;
         bars[i].textContent = array[i];
-        bars[i].style.backgroundColor = '#f39c12'; // Sorting step highlight
+        bars[i].style.backgroundColor = '#f39c12';  
     }
 
     await sleep(delay);
     updatePseudocode(exp, "Sorting by digit");
-
-    // Reset the colors for the bars
+ 
     for (let i = 0; i < n; i++) {
-        bars[i].style.backgroundColor = '#3498db'; // Default color after sorting
+        bars[i].style.backgroundColor = '#3498db'; 
     }
 }
 

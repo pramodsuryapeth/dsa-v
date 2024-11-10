@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background-color: #0288d1; /* Bright blue for header */
+    background-color: #0288d1;  
     width: 100%;
     padding: 20px;
     color: #fff;
@@ -45,7 +45,7 @@ header h1 {
 
 #searchbar:focus {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-color: #0277bd; /* Darker blue when focused */
+    border-color: #0277bd;  
 }
 
 .grid-container {
@@ -75,7 +75,7 @@ header h1 {
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: #f1f8e9; /* Light green on hover */
+    background-color: #f1f8e9; 
 }
 
 .card img {
